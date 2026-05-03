@@ -1,20 +1,22 @@
-
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  // Allow Google Fonts in production
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          { key: "X-Content-Type-Options",    value: "nosniff" },
-          { key: "X-Frame-Options",           value: "DENY" },
-          { key: "Referrer-Policy",           value: "strict-origin-when-cross-origin" },
-        ],
-      },
-    ];
+{
+  "name": "signalai-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-};
-
-export default nextConfig;
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.0",
+    "next": "15.0.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  }
+}
