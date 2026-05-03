@@ -1,0 +1,8 @@
+cd signalai
+git init
+git add .
+git commit -m "Initial SignalAI commit"
+
+# Create a new repo on github.com, then:
+git remote add origin https://github.com/YOUR_USERNAME/signalai.git
+git push -u origin main
