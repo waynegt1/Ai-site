@@ -1,8 +1,20 @@
-cd signalai
-git init
-git add .
-git commit -m "Initial SignalAI commit"
 
-# Create a new repo on github.com, then:
-git remote add origin https://github.com/YOUR_USERNAME/signalai.git
-git push -u origin main
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // Allow Google Fonts in production
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Content-Type-Options",    value: "nosniff" },
+          { key: "X-Frame-Options",           value: "DENY" },
+          { key: "Referrer-Policy",           value: "strict-origin-when-cross-origin" },
+        ],
+      },
+    ];
+  },
+};
+
+export default nextConfig;
